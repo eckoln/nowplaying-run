@@ -8,7 +8,7 @@ export default function Index() {
             but <span className="text-green-400">no worries!</span>
           </h1>
           <p className="text-gray-400">
-            The lightweight overlay tool for your live-streams.
+            The Minimalistic Overlay for Livestreams.
           </p>
           <footer className="text-gray-400">
             <div className="container">
