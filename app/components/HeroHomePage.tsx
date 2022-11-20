@@ -20,12 +20,24 @@ export default function HeroHomePage() {
                 &quot;browser&quot; source. It is simple to set up and
                 completely free to use.
               </p>
-              <figure className="h-full max-w-[250px] overflow-hidden">
+              {/* <figure className="h-full max-w-[250px] overflow-hidden">
                 <img src="/example-overlay.png" alt="" />
               </figure>
               <Button variant="ghost" endIcon={HiArrowLongRight}>
                 Let's create yours overlay
-              </Button>
+              </Button> */}
+              <div className="flex flex-col items-center space-y-2 border-t border-white/20 pt-4">
+                <Heading as="h4" variant="h4">
+                  Hello eckoln! Your overlay url is here:
+                </Heading>
+                <Button variant="copyToUrl" size="md">
+                  http://localhost:3000/overlays?ref=123456789123456789
+                </Button>
+                <p className="text-sm">
+                  Now, you have to few settings. Follow the directives at the
+                  bottom of page.
+                </p>
+              </div>
             </div>
           </div>
         </div>

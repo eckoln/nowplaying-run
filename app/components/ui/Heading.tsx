@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const headingStyles = cva("font-bold leading-snug", {
+const headingStyles = cva("font-bold !leading-snug", {
   variants: {
     variant: {
       h1: "text-4xl tablet:text-5xl",

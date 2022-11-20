@@ -2,13 +2,13 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 
 const buttonStyles = cva(
-  "inline-flex items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none text-sm text-center disabled:opacity-30 disabled:cursor-not-allowed space-x-2",
+  "inline-flex w-fit items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none text-sm text-center disabled:opacity-30 disabled:cursor-not-allowed space-x-2",
   {
     variants: {
       variant: {
         filled: "text-white bg-green-500 hover:bg-green-700",
         ghost: "text-white bg-transparent hover:bg-white/5",
-        overlayUrl: "bg-black/20 border border-black/20 hover:bg-black/50",
+        copyToUrl: "bg-black/20 border border-black/20 hover:bg-black/50",
       },
       size: {
         sm: "px-3 py-2",

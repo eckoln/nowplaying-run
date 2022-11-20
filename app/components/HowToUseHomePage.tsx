@@ -51,7 +51,7 @@ export default function HowToUseHomePage() {
 }
 
 const List = ({ children }: { children: React.ReactNode }) => {
-  return <ul className="space-y-6">{children}</ul>;
+  return <ul className="space-y-8">{children}</ul>;
 };
 
 const ListItem = ({
