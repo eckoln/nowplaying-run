@@ -1,3 +1,5 @@
+import Heading from "@/ui/Heading";
+
 export default function HowToUseHomePage() {
   return (
     <section className="">
@@ -6,64 +8,40 @@ export default function HowToUseHomePage() {
           <div className="container">
             <div className="space-y-10">
               <h1 className="text-2xl font-bold leading-snug">How to use?</h1>
-              <ul className="space-y-6">
-                <li>
-                  <div>
-                    <h1 className="text-base font-semibold leading-snug">
-                      Step 1: Copy the overlays url
-                    </h1>
-                    <p className="text-sm text-gray-400">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              <List>
+                <ListItem
+                  heading="Step 1: Copy the overlays url"
+                  description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Repudiandae est error reiciendis numquam aspernatur cum
                       modi sint veniam enim laudantium? Aliquid esse voluptatem
                       cumque nesciunt libero maiores eaque blanditiis
-                      asperiores.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <h1 className="text-base font-semibold  leading-snug">
-                      Step 2: Get your broadcasting tool
-                    </h1>
-                    <p className="text-sm text-gray-400">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Repudiandae est error reiciendis numquam aspernatur cum
-                      modi sint veniam enim laudantium? Aliquid esse voluptatem
-                      cumque nesciunt libero maiores eaque blanditiis
-                      asperiores.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <h1 className="text-base font-semibold  leading-snug">
-                      Step 3: Set-up the sizes
-                    </h1>
-                    <p className="text-sm text-gray-400">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Repudiandae est error reiciendis numquam aspernatur cum
-                      modi sint veniam enim laudantium? Aliquid esse voluptatem
-                      cumque nesciunt libero maiores eaque blanditiis
-                      asperiores.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <h1 className="text-base font-semibold  leading-snug">
-                      Step 4: And done!
-                    </h1>
-                    <p className="text-sm text-gray-400">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Repudiandae est error reiciendis numquam aspernatur cum
-                      modi sint veniam enim laudantium? Aliquid esse voluptatem
-                      cumque nesciunt libero maiores eaque blanditiis
-                      asperiores.
-                    </p>
-                  </div>
-                </li>
-              </ul>
+                      asperiores."
+                />
+                <ListItem
+                  heading="Step 2: Get your broadcasting tool"
+                  description=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae est error reiciendis numquam aspernatur cum
+                  modi sint veniam enim laudantium? Aliquid esse voluptatem
+                  cumque nesciunt libero maiores eaque blanditiis
+                  asperiores."
+                />
+                <ListItem
+                  heading=" Step 3: Set-up the sizes"
+                  description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae est error reiciendis numquam aspernatur cum
+                  modi sint veniam enim laudantium? Aliquid esse voluptatem
+                  cumque nesciunt libero maiores eaque blanditiis
+                  asperiores."
+                />
+                <ListItem
+                  heading="Step 4: And done!"
+                  description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae est error reiciendis numquam aspernatur cum
+                  modi sint veniam enim laudantium? Aliquid esse voluptatem
+                  cumque nesciunt libero maiores eaque blanditiis
+                  asperiores."
+                />
+              </List>
             </div>
           </div>
         </div>
@@ -71,3 +49,24 @@ export default function HowToUseHomePage() {
     </section>
   );
 }
+
+const List = ({ children }: { children: React.ReactNode }) => {
+  return <ul className="space-y-6">{children}</ul>;
+};
+
+const ListItem = ({
+  heading,
+  description,
+}: {
+  heading: string;
+  description: string;
+}) => {
+  return (
+    <li>
+      <div>
+        <Heading as="h6">{heading}</Heading>
+        <p className="text-gray-400">{description}</p>
+      </div>
+    </li>
+  );
+};

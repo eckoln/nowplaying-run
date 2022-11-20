@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 
 const buttonStyles = cva(
-  "inline-flex items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none text-sm text-center disabled:opacity-30 disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none text-sm text-center disabled:opacity-30 disabled:cursor-not-allowed space-x-2",
   {
     variants: {
       variant: {
@@ -23,17 +23,26 @@ const buttonStyles = cva(
   }
 );
 
-export interface Props
-  extends React.HTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonStyles> {}
+type ButtonProps = {
+  startIcon?: React.ElementType;
+  endIcon?: React.ElementType;
+} & React.HTMLAttributes<HTMLButtonElement>;
+
+export interface Props extends ButtonProps, VariantProps<typeof buttonStyles> {}
 
 export default function Button({
   variant,
   size,
   fullWidth,
+  startIcon,
+  endIcon,
   className,
+  children,
   ...props
 }: Props) {
+  const StartIconComponent = startIcon;
+  const EndIconComponent = endIcon;
+
   return (
     <button
       className={buttonStyles({
@@ -43,6 +52,18 @@ export default function Button({
         className,
       })}
       {...props}
-    />
+    >
+      {StartIconComponent && (
+        <span>
+          <StartIconComponent className="h-5 w-5" />
+        </span>
+      )}
+      <span>{children}</span>
+      {EndIconComponent && (
+        <span>
+          <EndIconComponent className="h-5 w-5" />
+        </span>
+      )}
+    </button>
   );
 }

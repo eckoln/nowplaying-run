@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
-import { BsSoundwave } from "react-icons/bs";
-import Button from "../ui/Button";
+import { BsSoundwave, BsSpotify } from "react-icons/bs";
+import Button from "@/ui/Button";
 
 export default function Header() {
   return (
@@ -15,10 +15,12 @@ export default function Header() {
               <span className="h-10 w-10">
                 <BsSoundwave className="h-full w-full" />
               </span>
-              <span className="text-xl font-semibold">Now Playing</span>
+              <span className="hidden text-xl font-semibold tablet:block">
+                Now Playing
+              </span>
             </Link>
 
-            <Button>Sign in with Spotify</Button>
+            <Button startIcon={BsSpotify}>Sign in with Spotify</Button>
           </div>
         </div>
       </nav>
