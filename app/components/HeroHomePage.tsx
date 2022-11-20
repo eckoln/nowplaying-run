@@ -14,15 +14,14 @@ export default function HeroHomePage() {
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <Heading as="h1" variant="h1">
-                The Lightweight Overlay for Your Live-streams
+                The Minimalistic Overlay for Livestreams
               </Heading>
               <p className="text-gray-300">
                 <span className="font-semibold">Now Playing</span> is an overlay
-                service for live-streamers that serve up to overlay the
-                currently track you are listening on Spotify and add it to OBS
-                Studio, XSplit and similar broadcasting tools as a
-                &quot;browser&quot; source. It is simple to set up and
-                completely free to use.
+                service for livestreamers that serves up an overlay of the track
+                you are listening to on Spotify and adds it to OBS Studio,
+                XSplit, and similar broadcasting tools as a "browser" source. It
+                is simple to set up and completely free to use.
               </p>
               {ref ? <AuthHeroHomePage refId={ref} /> : <GuestHeroHomePage />}
             </div>

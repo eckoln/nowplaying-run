@@ -10,7 +10,7 @@ export default function HowToUseHomePage() {
               <h1 className="text-2xl font-bold leading-snug">How to use?</h1>
               <List>
                 <ListItem
-                  heading="Step 1: Copy the overlays url"
+                  heading="Step 1: Copy the overlay url"
                   description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Repudiandae est error reiciendis numquam aspernatur cum
                       modi sint veniam enim laudantium? Aliquid esse voluptatem
@@ -18,7 +18,7 @@ export default function HowToUseHomePage() {
                       asperiores."
                 />
                 <ListItem
-                  heading="Step 2: Get your broadcasting tool"
+                  heading="Step 2: Open your broadcasting tool"
                   description=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Repudiandae est error reiciendis numquam aspernatur cum
                   modi sint veniam enim laudantium? Aliquid esse voluptatem
@@ -26,7 +26,7 @@ export default function HowToUseHomePage() {
                   asperiores."
                 />
                 <ListItem
-                  heading=" Step 3: Set-up the sizes"
+                  heading=" Step 3: Set up the sizes"
                   description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Repudiandae est error reiciendis numquam aspernatur cum
                   modi sint veniam enim laudantium? Aliquid esse voluptatem
