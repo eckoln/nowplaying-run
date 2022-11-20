@@ -8,7 +8,7 @@ export default function GuestHeroHomePage() {
         <img src="/example-overlay.png" alt="" />
       </figure>
       <Button variant="ghost" endIcon={HiArrowLongRight}>
-        Let's create yours overlay
+        Let's create your overlay
       </Button>
     </>
   );
