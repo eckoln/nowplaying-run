@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { Link, type LinkProps } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import React from "react";
 
-type ButtonOrLinkButtonProps = React.ComponentProps<"button"> & LinkProps;
+type ButtonOrLinkButtonProps = {
+  to?: string | object;
+} & React.ComponentProps<"button"> &
+  React.ComponentProps<"a">;
 export interface Props extends ButtonOrLinkButtonProps {}
 
 export default function ButtonOrLinkButton({ to, ...props }: Props) {
