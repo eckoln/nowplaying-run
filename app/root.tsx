@@ -42,7 +42,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen w-full bg-gradient-to-b from-green-600 via-neutral-900 to-black text-white antialiased">
+      <body className="min-h-screen w-full antialiased">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

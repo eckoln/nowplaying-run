@@ -1,6 +1,7 @@
 import Button from "@/ui/Button";
 import Heading from "./ui/Heading";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { spotify } from "@/utils/spotify.server";
 
 export default function GuestHeroHomePage() {
   return (
@@ -16,8 +17,11 @@ export default function GuestHeroHomePage() {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
+      <a href={spotify.createAuthorizeUrl()}>{spotify.createAuthorizeUrl()}</a>
       <Button
-        to="/redirects?to=https://spotify.com"
+        to={`/redirects?to=${new URLSearchParams(
+          spotify.createAuthorizeUrl()
+        )}`}
         variant="ghost"
         endIcon={HiArrowLongRight}
       >

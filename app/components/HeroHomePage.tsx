@@ -1,12 +1,9 @@
 import Heading from "@/ui/Heading";
-import { useSearchParams } from "@remix-run/react";
-import AuthHeroHomePage from "./AuthHeroHomePage";
-import GuestHeroHomePage from "./GuestHeroHomePage";
+import AuthHeroHomePage from "@/components/AuthHeroHomePage";
+import GuestHeroHomePage from "@/components/GuestHeroHomePage";
+import type { OverlayResponse } from "@/routes";
 
-export default function HeroHomePage() {
-  const [searchParams] = useSearchParams();
-  const ref = searchParams.get("ref") as string;
-
+export default function HeroHomePage({ data }: { data: OverlayResponse }) {
   return (
     <section>
       <div className="flex items-center justify-center py-8 tablet:py-24">
@@ -23,7 +20,11 @@ export default function HeroHomePage() {
                 XSplit, and similar broadcasting tools as a "browser" source. It
                 is simple to set up and completely free to use.
               </p>
-              {ref ? <AuthHeroHomePage refId={ref} /> : <GuestHeroHomePage />}
+              {data.ref ? (
+                <AuthHeroHomePage origin={data.origin} refId={data.ref} />
+              ) : (
+                <GuestHeroHomePage />
+              )}
             </div>
           </div>
         </div>
