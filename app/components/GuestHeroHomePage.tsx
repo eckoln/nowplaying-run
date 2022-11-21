@@ -7,7 +7,11 @@ export default function GuestHeroHomePage() {
       <figure className="h-full max-w-[250px] overflow-hidden">
         <img src="/example-overlay.png" alt="" />
       </figure>
-      <Button variant="ghost" endIcon={HiArrowLongRight}>
+      <Button
+        to="/redirects?to=https://spotify.com"
+        variant="ghost"
+        endIcon={HiArrowLongRight}
+      >
         Let's create your overlay
       </Button>
     </>

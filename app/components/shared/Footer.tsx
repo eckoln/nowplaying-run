@@ -1,4 +1,4 @@
-import ExternalLink from "../ui/ExternalLink";
+import Link from "@/ui/Link";
 
 export default function Footer() {
   return (
@@ -8,13 +8,13 @@ export default function Footer() {
           <div className="text-center">
             <span>
               made by{" "}
-              <ExternalLink
-                href="https://twittter.com/eckoln"
+              <Link
+                to="/redirects?to=https://twitter.com/eckoln"
                 target="_blank"
                 rel="noreferrer"
               >
                 @eckoln
-              </ExternalLink>
+              </Link>
             </span>
           </div>
         </div>

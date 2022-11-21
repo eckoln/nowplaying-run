@@ -1,5 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
+import type { Props as ButtonOrLinkButtonProps } from "@/ui/ButtonOrLinkButton";
+import ButtonOrLinkButton from "@/ui/ButtonOrLinkButton";
 
 const buttonStyles = cva(
   "inline-flex w-fit items-center justify-center rounded-xl font-semibold transition-colors focus:outline-none text-sm text-center disabled:opacity-30 disabled:cursor-not-allowed space-x-2",
@@ -26,9 +28,12 @@ const buttonStyles = cva(
 type ButtonProps = {
   startIcon?: React.ElementType;
   endIcon?: React.ElementType;
-} & React.HTMLAttributes<HTMLButtonElement>;
+};
 
-export interface Props extends ButtonProps, VariantProps<typeof buttonStyles> {}
+export interface Props
+  extends ButtonProps,
+    ButtonOrLinkButtonProps,
+    VariantProps<typeof buttonStyles> {}
 
 export default function Button({
   variant,
@@ -44,7 +49,7 @@ export default function Button({
   const EndIconComponent = endIcon;
 
   return (
-    <button
+    <ButtonOrLinkButton
       className={buttonStyles({
         variant,
         size,
@@ -64,6 +69,6 @@ export default function Button({
           <EndIconComponent className="h-5 w-5" />
         </span>
       )}
-    </button>
+    </ButtonOrLinkButton>
   );
 }

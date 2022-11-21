@@ -20,7 +20,12 @@ export default function Header() {
               </span>
             </Link>
 
-            <Button startIcon={BsSpotify}>Sign in with Spotify</Button>
+            <Button
+              to="/redirects?to=https://spotify.com"
+              startIcon={BsSpotify}
+            >
+              Sign in with Spotify
+            </Button>
           </div>
         </div>
       </nav>
