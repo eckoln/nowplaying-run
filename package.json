@@ -6,9 +6,13 @@
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:studio": "prisma studio --browser none"
   },
   "dependencies": {
+    "@prisma/client": "^4.6.1",
     "@remix-run/node": "^1.7.6",
     "@remix-run/react": "^1.7.6",
     "@remix-run/serve": "^1.7.6",
@@ -29,6 +33,7 @@
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "prisma": "^4.6.1",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.3"
   },
