@@ -1,5 +1,5 @@
-import Button from "@/ui/Button";
-import Heading from "@/ui/Heading";
+import Button from "src/components/shared/ui/Button";
+import Heading from "src/components/shared/ui/Heading";
 import { HiArrowLongRight } from "react-icons/hi2";
 
 type Props = {

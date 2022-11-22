@@ -1,6 +1,6 @@
-import Button from "@/ui/Button";
-import Heading from "@/ui/Heading";
-import type { Props as HeroProps } from "@/components/HeroHomePage";
+import Button from "src/components/shared/ui/Button";
+import Heading from "src/components/shared/ui/Heading";
+import type { Props as HeroProps } from "src/components/HeroHomePage";
 
 export default function AuthHeroHomePage({ data }: HeroProps) {
   return (

@@ -1,6 +1,6 @@
-import Heading from "@/ui/Heading";
-import AuthHeroHomePage from "@/components/AuthHeroHomePage";
-import GuestHeroHomePage from "@/components/GuestHeroHomePage";
+import Heading from "src/components/shared/ui/Heading";
+import AuthHeroHomePage from "src/components/AuthHeroHomePage";
+import GuestHeroHomePage from "src/components/GuestHeroHomePage";
 
 export type Props = {
   data: {

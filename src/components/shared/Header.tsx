@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import { BsSoundwave, BsSpotify } from "react-icons/bs";
-import Button from "@/ui/Button";
+import Button from "src/components/shared/ui/Button";
 
 export default function Header() {
   return (

@@ -1,4 +1,4 @@
-import Heading from "@/ui/Heading";
+import Heading from "src/components/shared/ui/Heading";
 
 export default function HowToUseHomePage() {
   return (

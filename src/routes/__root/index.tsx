@@ -1,6 +1,6 @@
-import HeroHomePage from "@/components/HeroHomePage";
-import HowToUseHomePage from "@/components/HowToUseHomePage";
-import { spotify } from "@/utils/spotify.server";
+import HeroHomePage from "src/components/HeroHomePage";
+import HowToUseHomePage from "src/components/HowToUseHomePage";
+import { spotify } from "src/utils/spotify.server";
 import { json, type LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 

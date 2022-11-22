@@ -1,5 +1,5 @@
-import { prisma } from "@/utils/prisma.server";
-import { spotify } from "@/utils/spotify.server";
+import { prisma } from "src/utils/prisma.server";
+import { spotify } from "src/utils/spotify.server";
 import { type LoaderFunction, redirect } from "@remix-run/node";
 
 export const loader: LoaderFunction = async ({ request }) => {
