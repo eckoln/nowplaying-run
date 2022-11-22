@@ -1,9 +1,10 @@
-import {
+import type {
   SpotifyAccessTokenResponse,
   SpotifyCurrentlyPlayingResponse,
   SpotifyCurrentUserResponse,
   SpotifyRefreshTokenResponse,
 } from "types";
+import { env } from "./env.server";
 
 type Props = {
   authDomain: string;
@@ -20,16 +21,15 @@ class Spotify {
   }
 
   createAuthorizeUrl = () => {
-    const { authDomain } = this.options;
+    const { authDomain, clientId, clientRedirectUri } = this.options;
 
-    const uri = `https://${authDomain}/authorize`;
+    const uri = `https:/${authDomain}/authorize`;
     const params = {
-      client_id: this.options.clientId,
+      client_id: clientId,
       response_type: "code",
-      redirect_uri: this.options.clientRedirectUri,
+      redirect_uri: clientRedirectUri,
       scope: "user-read-email user-read-currently-playing",
       show_dialog: "true",
-      /* state: "", */
     };
     const authorizeUrl = uri + "?" + new URLSearchParams(params).toString();
     return authorizeUrl;
@@ -158,7 +158,7 @@ class Spotify {
 export const spotify = new Spotify({
   authDomain: "accounts.spotify.com",
   apiDomain: "api.spotify.com",
-  clientId: process.env.SPOTIFY_CLIENT_ID as string,
-  clientSecret: process.env.SPOTIFY_CLIENT_SECRET as string,
-  clientRedirectUri: process.env.SPOTIFY_CLIENT_REDIRECT_URI as string,
+  clientId: env.SPOTIFY_CLIENT_ID,
+  clientSecret: env.SPOTIFY_CLIENT_SECRET,
+  clientRedirectUri: env.SPOTIFY_CLIENT_REDIRECT_URI,
 });
