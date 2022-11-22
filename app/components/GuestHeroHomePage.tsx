@@ -20,18 +20,15 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
-      <a href={`${authorizeUrl}`} target="_blank" rel="noreferrer">
-        click me
-      </a>
-      {/* <Button
-        to={`/redirects?to=${new URLSearchParams(
-          spotify.createAuthorizeUrl()
-        )}`}
+      <Button
         variant="ghost"
         endIcon={HiArrowLongRight}
+        onClick={() => {
+          window.location.href = authorizeUrl;
+        }}
       >
         Let's create your overlay
-      </Button> */}
+      </Button>
     </>
   );
 }
