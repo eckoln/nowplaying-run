@@ -20,7 +20,7 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
-      <a href={authorizeUrl} target="_blank" rel="noreferrer">
+      <a href={`${authorizeUrl}`} target="_blank" rel="noreferrer">
         click me
       </a>
       {/* <Button
