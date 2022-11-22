@@ -1,9 +1,16 @@
 import Heading from "@/ui/Heading";
 import AuthHeroHomePage from "@/components/AuthHeroHomePage";
 import GuestHeroHomePage from "@/components/GuestHeroHomePage";
-import type { OverlayResponse } from "@/routes";
 
-export default function HeroHomePage({ data }: { data: OverlayResponse }) {
+export type Props = {
+  data: {
+    origin: string;
+    ref: string | null;
+    authorizeUrl: string;
+  };
+};
+
+export default function HeroHomePage({ data }: Props) {
   return (
     <section>
       <div className="flex items-center justify-center py-8 tablet:py-24">
@@ -21,9 +28,9 @@ export default function HeroHomePage({ data }: { data: OverlayResponse }) {
                 is simple to set up and completely free to use.
               </p>
               {data.ref ? (
-                <AuthHeroHomePage origin={data.origin} refId={data.ref} />
+                <AuthHeroHomePage data={data} />
               ) : (
-                <GuestHeroHomePage />
+                <GuestHeroHomePage authorizeUrl={data.authorizeUrl} />
               )}
             </div>
           </div>

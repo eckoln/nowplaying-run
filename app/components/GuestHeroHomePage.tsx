@@ -1,9 +1,13 @@
 import Button from "@/ui/Button";
-import Heading from "./ui/Heading";
+import Heading from "@/ui/Heading";
+import { env } from "@/utils/env.server";
 import { HiArrowLongRight } from "react-icons/hi2";
-import { spotify } from "@/utils/spotify.server";
 
-export default function GuestHeroHomePage() {
+type Props = {
+  authorizeUrl: string;
+};
+
+export default function GuestHeroHomePage({ authorizeUrl }: Props) {
   return (
     <>
       <div className="relative inline-flex w-full max-w-[300px] flex-row items-center gap-4 rounded-lg bg-black/95 py-4 px-4">
@@ -17,8 +21,8 @@ export default function GuestHeroHomePage() {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
-      <a href={spotify.createAuthorizeUrl()}>{spotify.createAuthorizeUrl()}</a>
-      <Button
+      <a href={authorizeUrl}>click me</a>
+      {/* <Button
         to={`/redirects?to=${new URLSearchParams(
           spotify.createAuthorizeUrl()
         )}`}
@@ -26,7 +30,7 @@ export default function GuestHeroHomePage() {
         endIcon={HiArrowLongRight}
       >
         Let's create your overlay
-      </Button>
+      </Button> */}
     </>
   );
 }
