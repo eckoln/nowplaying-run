@@ -20,15 +20,16 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
-      <Button
+      <a href={authorizeUrl}>click me</a>
+      {/* <Button
+        to={`/redirects?to=${authorizeUrl}`}
+        target="_blank"
+        rel="noreferrer"
         variant="ghost"
         endIcon={HiArrowLongRight}
-        onClick={() => {
-          window.location.href = authorizeUrl;
-        }}
       >
         Let's create your overlay
-      </Button>
+      </Button> */}
     </>
   );
 }
