@@ -1,6 +1,5 @@
 import Button from "@/ui/Button";
 import Heading from "@/ui/Heading";
-import { env } from "@/utils/env.server";
 import { HiArrowLongRight } from "react-icons/hi2";
 
 type Props = {
@@ -21,7 +20,9 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
-      <a href={authorizeUrl}>click me</a>
+      <a href={authorizeUrl} target="_blank" rel="noreferrer">
+        click me
+      </a>
       {/* <Button
         to={`/redirects?to=${new URLSearchParams(
           spotify.createAuthorizeUrl()
