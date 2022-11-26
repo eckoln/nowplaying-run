@@ -1,8 +1,10 @@
-import { type LoaderArgs, redirect } from "@remix-run/node";
+import { type LoaderArgs, redirect, json } from "@remix-run/node";
 
 export const loader = ({ request }: LoaderArgs) => {
   const url = new URL(request.url);
-  const to = url.href.split("redirects?to=")[1] as string;
+  const cc = url.href.split("/redirects?to=");
+  console.log("cc", cc?.[1].toString());
 
-  return redirect(to);
+  //return json(cc);
+  return redirect(cc?.[1].toString());
 };

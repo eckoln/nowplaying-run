@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import { Link } from "@remix-run/react";
 import React from "react";
 
