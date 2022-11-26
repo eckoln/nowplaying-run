@@ -1,6 +1,7 @@
 import Button from "src/components/shared/ui/Button";
 import Heading from "src/components/shared/ui/Heading";
 import { HiArrowLongRight } from "react-icons/hi2";
+import normalizeUrl from "normalize-url";
 
 type Props = {
   authorizeUrl: string;
@@ -20,9 +21,19 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <p className="text-gray-400">Artist</p>
         </div>
       </div>
-      <a href={`${authorizeUrl}`} target="_blank" rel="noreferrer">
+      <a href="https://google.com" target="_blank" rel="noreferrer">
         click me
       </a>
+      <a href="//google.com" target="_blank" rel="noreferrer">
+        click me
+      </a>
+      {/* <a
+        href={normalizeUrl("google.com").toString()}
+        target="_blank"
+        rel="noreferrer"
+      >
+        click me
+      </a> */}
       {/* <Button
         to={`/redirects?to=${authorizeUrl}`}
         target="_blank"
