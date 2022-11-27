@@ -1,6 +1,6 @@
+import { HiArrowLongRight } from "react-icons/hi2";
 import Button from "src/components/shared/ui/Button";
 import Heading from "src/components/shared/ui/Heading";
-import { HiArrowLongRight } from "react-icons/hi2";
 
 type Props = {
   authorizeUrl: string;

@@ -17,11 +17,7 @@ export default function ButtonOrLinkButton({
   const buttonComponent = <button {...props} />;
 
   if (isLink && isExternal) {
-    return (
-      <a href={to} target="_blank" rel="noreferrer">
-        {buttonComponent}
-      </a>
-    );
+    return <a href={to}>{buttonComponent}</a>;
   } else if (isLink) {
     return <Link to={to}>{buttonComponent}</Link>;
   }
