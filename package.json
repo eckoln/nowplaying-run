@@ -9,6 +9,7 @@
     "start": "remix-serve build",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
+    "prisma:migrate": "prisma migrate dev init",
     "prisma:studio": "prisma studio --browser none"
   },
   "dependencies": {
