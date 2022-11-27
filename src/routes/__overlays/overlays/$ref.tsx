@@ -1,13 +1,13 @@
 import Heading from "src/components/shared/ui/Heading";
 import { prisma } from "src/utils/prisma.server";
 import { spotify } from "src/utils/spotify.server";
-import { json, redirect, type LoaderFunction } from "@remix-run/node";
+import type { SpotifyCurrentlyPlaying } from "types";
+import { json, redirect, type LoaderArgs } from "@remix-run/node";
 import { useFetcher, useParams } from "@remix-run/react";
 import { useEffect } from "react";
-import type { SpotifyCurrentlyPlaying } from "types";
 import { getSession, commitSession } from "@/utils/session.server";
 
-export const loader: LoaderFunction = async ({ request, params }) => {
+export async function loader({ request, params }: LoaderArgs) {
   const ref = params.ref as string;
   const cookie = request.headers.get("Cookie");
   const session = await getSession(cookie);
@@ -52,7 +52,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
     image: track.item.album.images[2].url,
     artists: track.item.artists.map((artist) => artist.name),
   });
-};
+}
 
 export default function Overlay() {
   const params = useParams();
@@ -77,7 +77,7 @@ export default function Overlay() {
   }
 
   return (
-    <div className="relative inline-flex w-full max-w-xs flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-3.5 px-5">
+    <div className="relative inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-1.5 px-3">
       <figure className="inset-0 z-10 h-full max-h-[64px] w-full max-w-[64px] overflow-hidden rounded-md">
         <img src={data.image} alt="" />
       </figure>
@@ -85,7 +85,7 @@ export default function Overlay() {
         <Heading as="h5" variant="h5">
           {data.name}
         </Heading>
-        <p className="text-gray-400">
+        <p className="text-sm text-gray-400">
           {data.artists.map((artist) => artist).join(", ")}
         </p>
       </div>
