@@ -11,35 +11,19 @@ export default function HowToUseHomePage() {
               <List>
                 <ListItem
                   heading="Step 1: Copy the overlay url"
-                  description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Repudiandae est error reiciendis numquam aspernatur cum
-                      modi sint veniam enim laudantium? Aliquid esse voluptatem
-                      cumque nesciunt libero maiores eaque blanditiis
-                      asperiores."
+                  description="Copy the link we gave you after you signed in."
                 />
                 <ListItem
                   heading="Step 2: Open your broadcasting tool"
-                  description=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae est error reiciendis numquam aspernatur cum
-                  modi sint veniam enim laudantium? Aliquid esse voluptatem
-                  cumque nesciunt libero maiores eaque blanditiis
-                  asperiores."
+                  description="Open your broadcasting tool and add a new browser source. Paste the overlay link into the URL field."
                 />
                 <ListItem
-                  heading=" Step 3: Set up the sizes"
-                  description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae est error reiciendis numquam aspernatur cum
-                  modi sint veniam enim laudantium? Aliquid esse voluptatem
-                  cumque nesciunt libero maiores eaque blanditiis
-                  asperiores."
+                  heading="Step 3: Set up the sizes"
+                  description="Width: 285, Height: 76. The dimensions should be set to 285x76 to avoid problems."
                 />
                 <ListItem
                   heading="Step 4: And done!"
-                  description="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae est error reiciendis numquam aspernatur cum
-                  modi sint veniam enim laudantium? Aliquid esse voluptatem
-                  cumque nesciunt libero maiores eaque blanditiis
-                  asperiores."
+                  description="The songs you've been listening to will now appear immediately in the source you've added."
                 />
               </List>
             </div>
