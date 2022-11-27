@@ -9,7 +9,7 @@ type Props = {
 export default function GuestHeroHomePage({ authorizeUrl }: Props) {
   return (
     <>
-      <div className="relative inline-flex w-full max-w-[300px] flex-row items-center gap-4 rounded-lg bg-black/95 py-4 px-4">
+      <div className="relative inline-flex w-full max-w-[285px] flex-row items-center gap-4 rounded-lg bg-black/95 p-3">
         <figure className="inline-block h-12 w-12 overflow-hidden rounded-lg">
           <img src="/overlay-example-figure.png" alt="" />
         </figure>
@@ -17,12 +17,9 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <Heading as="h5" variant="h5" className="text-green-400">
             Always Forever
           </Heading>
-          <p className="text-gray-400">Artist</p>
+          <p className="text-sm text-gray-400">Artist</p>
         </div>
       </div>
-      <a href={authorizeUrl} target="_blank" rel="noreferrer">
-        click me
-      </a>
       <Button
         to={authorizeUrl}
         variant="ghost"
