@@ -9,9 +9,10 @@ export default function Footer() {
             <span>
               made by{" "}
               <Link
-                to="/redirects?to=https://twitter.com/eckoln"
+                to="https://twitter.com/eckoln"
                 target="_blank"
                 rel="noreferrer"
+                isExternal
               >
                 @eckoln
               </Link>

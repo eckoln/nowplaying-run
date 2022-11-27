@@ -5,11 +5,28 @@ import {
   type LinkProps as RemixLinkProps,
 } from "@remix-run/react";
 
-export type Props = React.HTMLAttributes<HTMLAnchorElement> & RemixLinkProps;
+export type Props = {
+  to: string;
+  isExternal?: boolean;
+} & React.HTMLAttributes<HTMLAnchorElement> &
+  RemixLinkProps;
 
-export default function Link({ ...props }: Props) {
+export default function Link({ to, isExternal, ...props }: Props) {
+  if (isExternal) {
+    return (
+      <a
+        href={to}
+        className={cx(
+          "font-bold text-green-400 transition-colors hover:text-green-600"
+        )}
+        {...props}
+      />
+    );
+  }
+
   return (
     <RemixLink
+      to={to}
       className={cx(
         "font-bold text-green-400 transition-colors hover:text-green-600"
       )}
