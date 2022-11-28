@@ -1,10 +1,11 @@
+import type { Prisma } from "@prisma/client";
 import AuthHeroHomePage from "src/components/AuthHeroHomePage";
 import GuestHeroHomePage from "src/components/GuestHeroHomePage";
 import Heading from "src/components/shared/ui/Heading";
 
 export type Props = {
   data: {
-    user: any;
+    user: Prisma.AccountSelect;
     origin: string;
     ref: string | null;
     authorizeUrl: string;
