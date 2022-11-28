@@ -5,3 +5,5 @@ node_modules
 /public/build
 .env
 /src/styles
+.yarn.error.log
+
