@@ -1,11 +1,15 @@
-import Heading from "src/components/shared/ui/Heading";
+import {
+  commitSession,
+  destroySession,
+  getSession,
+} from "@/utils/session.server";
+import { json, redirect, type LoaderArgs } from "@remix-run/node";
+import { useFetcher, useParams } from "@remix-run/react";
+import { Heading } from "@rocinante/ui";
+import { useEffect } from "react";
 import { prisma } from "src/utils/prisma.server";
 import { spotify } from "src/utils/spotify.server";
 import type { SpotifyCurrentlyPlaying } from "types";
-import { json, redirect, type LoaderArgs } from "@remix-run/node";
-import { useFetcher, useParams } from "@remix-run/react";
-import { useEffect } from "react";
-import { getSession, commitSession } from "@/utils/session.server";
 
 export async function loader({ request, params }: LoaderArgs) {
   const ref = params.ref as string;
@@ -35,6 +39,16 @@ export async function loader({ request, params }: LoaderArgs) {
     return redirect(request.url, {
       headers: {
         "Set-Cookie": await commitSession(session),
+      },
+    });
+  }
+
+  // check session if have then
+  if (session.data.id !== ref) {
+    // destroy session
+    return redirect(request.url, {
+      headers: {
+        "Set-Cookie": await destroySession(session),
       },
     });
   }

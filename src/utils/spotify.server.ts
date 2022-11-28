@@ -29,7 +29,7 @@ class Spotify {
       response_type: "code",
       redirect_uri: clientRedirectUri,
       scope: "user-read-email user-read-currently-playing",
-      show_dialog: "true",
+      //show_dialog: "true",
     };
     const authorizeUrl = uri + "?" + new URLSearchParams(params).toString();
     return authorizeUrl;
