@@ -1,6 +1,5 @@
 import { Link } from "@remix-run/react";
-import { BsSoundwave, BsSpotify } from "react-icons/bs";
-import Button from "@/ui/Button";
+import { BsSoundwave } from "react-icons/bs";
 
 export default function Header() {
   return (
@@ -19,13 +18,6 @@ export default function Header() {
                 Now Playing
               </span>
             </Link>
-
-            <Button
-              to="/redirects?to=https://spotify.com"
-              startIcon={BsSpotify}
-            >
-              Sign in with Spotify
-            </Button>
           </div>
         </div>
       </nav>

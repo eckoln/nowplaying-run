@@ -23,13 +23,13 @@ class Spotify {
   createAuthorizeUrl = () => {
     const { authDomain, clientId, clientRedirectUri } = this.options;
 
-    const uri = `https:/${authDomain}/authorize`;
+    const uri = `https://${authDomain}/authorize`;
     const params = {
       client_id: clientId,
       response_type: "code",
       redirect_uri: clientRedirectUri,
       scope: "user-read-email user-read-currently-playing",
-      show_dialog: "true",
+      //show_dialog: "true",
     };
     const authorizeUrl = uri + "?" + new URLSearchParams(params).toString();
     return authorizeUrl;
