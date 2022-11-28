@@ -1,4 +1,4 @@
-import Heading from "src/components/shared/ui/Heading";
+import { Heading } from "@rocinante/ui";
 
 export default function HowToUseHomePage() {
   return (

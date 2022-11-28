@@ -17,6 +17,7 @@
     "@remix-run/node": "^1.7.6",
     "@remix-run/react": "^1.7.6",
     "@remix-run/serve": "^1.7.6",
+    "@rocinante/ui": "https://github.com/eckoln/rocinante-ui.git",
     "class-variance-authority": "^0.3.0",
     "envsafe": "^2.0.3",
     "isbot": "^3.6.5",

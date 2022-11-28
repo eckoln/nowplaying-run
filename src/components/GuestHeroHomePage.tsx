@@ -1,6 +1,7 @@
-import { HiArrowLongRight } from "react-icons/hi2";
-import Button from "src/components/shared/ui/Button";
-import Heading from "src/components/shared/ui/Heading";
+//import Button from "src/components/shared/ui/Button";
+import { Heading } from "@rocinante/ui";
+import { BsArrowRight } from "react-icons/bs";
+import Button from "./shared/ui/Button";
 
 type Props = {
   authorizeUrl: string;
@@ -21,9 +22,9 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
         </div>
       </div>
       <Button
+        intent="ghost"
         to={authorizeUrl}
-        variant="ghost"
-        endIcon={HiArrowLongRight}
+        endIcon={BsArrowRight}
         isExternal
       >
         Let's create your overlay

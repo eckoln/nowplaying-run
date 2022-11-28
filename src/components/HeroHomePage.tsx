@@ -1,7 +1,7 @@
 import type { Prisma } from "@prisma/client";
+import { Heading } from "@rocinante/ui";
 import AuthHeroHomePage from "src/components/AuthHeroHomePage";
 import GuestHeroHomePage from "src/components/GuestHeroHomePage";
-import Heading from "src/components/shared/ui/Heading";
 
 export type Props = {
   data: {

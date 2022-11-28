@@ -1,6 +1,6 @@
+import { Heading } from "@rocinante/ui";
 import type { Props as HeroProps } from "src/components/HeroHomePage";
 import Button from "src/components/shared/ui/Button";
-import Heading from "src/components/shared/ui/Heading";
 
 export default function AuthHeroHomePage({ data }: HeroProps) {
   return (
@@ -9,8 +9,7 @@ export default function AuthHeroHomePage({ data }: HeroProps) {
         Hello {data.user.displayName}! Your overlay URL is here:
       </Heading>
       <Button
-        variant="copyToUrl"
-        size="md"
+        intent="primary"
         onClick={() => {
           console.log("clicked to overlay url");
           navigator.clipboard.writeText(`${data.origin}/overlays/${data.ref}`);

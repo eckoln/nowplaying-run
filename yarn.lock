@@ -1358,6 +1358,12 @@
   dependencies:
     web-streams-polyfill "^3.1.1"
 
+"@rocinante/ui@https://github.com/eckoln/rocinante-ui.git":
+  version "1.0.0"
+  resolved "https://github.com/eckoln/rocinante-ui.git#e88260be077536759871a4f53e7781e941be4d41"
+  dependencies:
+    class-variance-authority "^0.3.0"
+
 "@rollup/pluginutils@^4.0.0":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
