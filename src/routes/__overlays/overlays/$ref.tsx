@@ -65,7 +65,7 @@ export async function loader({ request, params }: LoaderArgs) {
     name: track.item.name,
     image: track.item.album.images[2].url,
     artists: track.item.artists.map((artist) => artist.name),
-    href: track.item.href,
+    href: track.item.external_urls.spotify,
   });
 }
 
@@ -92,7 +92,7 @@ export default function Overlay() {
   }
 
   return (
-    <a href={""}>
+    <a href={data.href} target="_blank" rel="noreferrer">
       <div className="relative inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-1.5 px-3">
         <figure className="inset-0 z-10 h-full max-h-[64px] w-full max-w-[64px]">
           <img src={data.image} alt="" />
