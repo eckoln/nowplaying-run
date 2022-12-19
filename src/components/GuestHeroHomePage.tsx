@@ -1,7 +1,7 @@
 //import Button from "src/components/shared/ui/Button";
 import { Heading } from "@rocinante/ui";
 import { BsArrowRight } from "react-icons/bs";
-import Button from "./shared/ui/Button";
+import Button from "src/components/shared/ui/Button";
 
 type Props = {
   authorizeUrl: string;
@@ -15,17 +15,17 @@ export default function GuestHeroHomePage({ authorizeUrl }: Props) {
           <img src="/overlay-example-figure.png" alt="" />
         </figure>
         <div className="flex flex-col items-start">
-          <Heading as="h5" variant="h5" className="text-green-400">
+          <Heading as="h5" size="h5" className="text-green-400">
             Always Forever
           </Heading>
           <p className="text-sm text-gray-400">Artist</p>
         </div>
       </div>
       <Button
-        intent="ghost"
+        variant="ghost"
         to={authorizeUrl}
-        endIcon={BsArrowRight}
-        isExternal
+        endIcon={<BsArrowRight className="h-5 w-5" />}
+        external
       >
         Let's create your overlay
       </Button>

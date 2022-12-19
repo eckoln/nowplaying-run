@@ -15,11 +15,11 @@ export type Props = {
 export default function HeroHomePage({ data }: Props) {
   return (
     <section>
-      <div className="flex items-center justify-center py-8 tablet:py-24">
-        <div className="w-full laptop:max-w-2xl">
+      <div className="py-8 tablet:py-24">
+        <div className="mx-auto w-full laptop:max-w-2xl">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
-              <Heading as="h1" variant="h1">
+              <Heading as="h1" size="h1">
                 The Minimalistic Overlay for Livestreams
               </Heading>
               <p className="text-gray-300">

@@ -23,7 +23,7 @@ const Copyright = () => {
         to="https://twitter.com/eckoln"
         target="_blank"
         rel="noreferrer"
-        isExternal
+        external
       >
         @eckoln
       </Link>
@@ -39,7 +39,7 @@ const ContriBute = () => {
         to="https://github.com/eckoln/nowplaying-run-remix-edition"
         target="_blank"
         rel="noreferrer"
-        isExternal
+        external
       >
         Contribute!
       </Link>
