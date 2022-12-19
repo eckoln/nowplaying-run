@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   commitSession,
   destroySession,
@@ -73,8 +74,8 @@ export default function Overlay() {
   const params = useParams();
   const fetcher = useFetcher();
 
-  const data = fetcher.data as SpotifyCurrentlyPlaying;
   const refetch = () => fetcher.load(`/overlays/${params.ref}`);
+  const data = fetcher.data as SpotifyCurrentlyPlaying;
 
   // refetch track data every 3 seconds
   useEffect(() => {
@@ -98,7 +99,7 @@ export default function Overlay() {
           <img src={data.image} alt="" />
         </figure>
         <div className="z-10 truncate text-green-500">
-          <Heading as="h5" variant="h5">
+          <Heading as="h5" size="h5">
             {data.name}
           </Heading>
           <p className="text-sm text-gray-400">
