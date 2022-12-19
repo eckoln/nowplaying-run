@@ -65,6 +65,7 @@ export async function loader({ request, params }: LoaderArgs) {
     name: track.item.name,
     image: track.item.album.images[2].url,
     artists: track.item.artists.map((artist) => artist.name),
+    href: track.item.external_urls.spotify,
   });
 }
 
@@ -91,19 +92,21 @@ export default function Overlay() {
   }
 
   return (
-    <div className="relative inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-1.5 px-3">
-      <figure className="inset-0 z-10 h-full max-h-[64px] w-full max-w-[64px] overflow-hidden rounded-md">
-        <img src={data.image} alt="" />
-      </figure>
-      <div className="z-10 truncate text-green-500">
-        <Heading as="h5" variant="h5">
-          {data.name}
-        </Heading>
-        <p className="text-sm text-gray-400">
-          {data.artists.map((artist) => artist).join(", ")}
-        </p>
+    <a href={data.href} target="_blank" rel="noreferrer">
+      <div className="relative inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-1.5 px-3">
+        <figure className="inset-0 z-10 h-full max-h-[64px] w-full max-w-[64px]">
+          <img src={data.image} alt="" />
+        </figure>
+        <div className="z-10 truncate text-green-500">
+          <Heading as="h5" variant="h5">
+            {data.name}
+          </Heading>
+          <p className="text-sm text-gray-400">
+            {data.artists.map((artist) => artist).join(", ")}
+          </p>
+        </div>
+        <div className="absolute inset-0 z-0 hidden h-full w-full bg-black bg-opacity-50 backdrop-blur-md" />
       </div>
-      <div className="absolute inset-0 z-0 hidden h-full w-full bg-black bg-opacity-50 backdrop-blur-md" />
-    </div>
+    </a>
   );
 }

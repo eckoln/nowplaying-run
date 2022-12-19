@@ -28,4 +28,5 @@ export interface SpotifyCurrentlyPlaying {
   name: string;
   image: string;
   artists: Array<string>;
+  href: string;
 }
