@@ -36,7 +36,7 @@ const ContriBute = () => {
     <p>
       <Link to="/">nowplaying.run</Link> is an open-source initiative.{" "}
       <Link
-        to="https://github.com/eckoln/nowplaying-run-remix-edition"
+        to="https://github.com/eckoln/nowplaying-run"
         target="_blank"
         rel="noreferrer"
         external
