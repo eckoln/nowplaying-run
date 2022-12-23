@@ -43,6 +43,6 @@
     "yarn-upgrade-all": "^0.7.1"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   }
 }
