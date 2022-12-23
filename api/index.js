@@ -1,3 +1,4 @@
+"use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -17,9 +18,16 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 )), __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 
-// <stdin>
-var stdin_exports = {};
-__export(stdin_exports, {
+// server.js
+var server_exports = {};
+__export(server_exports, {
+  default: () => server_default
+});
+module.exports = __toCommonJS(server_exports);
+
+// server-entry-module:@remix-run/dev/server-build
+var server_build_exports = {};
+__export(server_build_exports, {
   assets: () => assets_manifest_default,
   assetsBuildDirectory: () => assetsBuildDirectory,
   entry: () => entry,
@@ -27,7 +35,6 @@ __export(stdin_exports, {
   publicPath: () => publicPath,
   routes: () => routes
 });
-module.exports = __toCommonJS(stdin_exports);
 
 // src/entry.server.tsx
 var entry_server_exports = {};
@@ -643,12 +650,8 @@ var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath
     module: root_exports3
   }
 };
+
+// server.js
+var import_vercel = require("@remix-run/vercel"), server_default = (0, import_vercel.createRequestHandler)({ build: server_build_exports, mode: "production" });
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  assets,
-  assetsBuildDirectory,
-  entry,
-  future,
-  publicPath,
-  routes
-});
+0 && (module.exports = {});
