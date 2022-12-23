@@ -19,6 +19,7 @@
     "@remix-run/serve": "^1.9.0",
     "@remix-run/vercel": "^1.9.0",
     "@rocinante/ui": "https://github.com/eckoln/rocinante-ui.git",
+    "@vercel/node": "^2.8.2",
     "envsafe": "^2.0.3",
     "isbot": "^3.6.5",
     "react": "^18.2.0",
