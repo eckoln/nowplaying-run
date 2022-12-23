@@ -89,24 +89,21 @@ export default function Overlay() {
   }, []);
 
   if (!data || !data.is_playing) {
-    return <div></div>;
+    return <div>You're not listening currently.</div>;
   }
 
   return (
     <a href={data.href} target="_blank" rel="noreferrer">
-      <div className="relative inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-1.5 px-3">
-        <figure className="inset-0 z-10 h-full max-h-[64px] w-full max-w-[64px]">
+      <div className="inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 bg-black pr-3">
+        <figure className="inline h-16 w-16 shrink-0">
           <img src={data.image} alt="" />
         </figure>
         <div className="z-10 truncate text-green-500">
-          <Heading as="h5" size="h5">
-            {data.name}
-          </Heading>
+          <Heading size="h5">{data.name}</Heading>
           <p className="text-sm text-gray-400">
             {data.artists.map((artist) => artist).join(", ")}
           </p>
         </div>
-        <div className="absolute inset-0 z-0 hidden h-full w-full bg-black bg-opacity-50 backdrop-blur-md" />
       </div>
     </a>
   );

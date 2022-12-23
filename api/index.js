@@ -113,13 +113,12 @@ __export(root_exports, {
   links: () => links,
   meta: () => meta
 });
-var import_react2 = require("@remix-run/react");
 
 // src/styles/app.css
-var app_default = "/build/_assets/app-YGN5SFVO.css";
+var app_default = "/build/_assets/app-HUFPYPNL.css";
 
 // src/root.tsx
-var import_jsx_runtime2 = require("react/jsx-runtime"), links = () => [
+var import_react2 = require("@remix-run/react"), import_jsx_runtime2 = require("react/jsx-runtime"), links = () => [
   { rel: "stylesheet", href: app_default },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -132,11 +131,9 @@ var import_jsx_runtime2 = require("react/jsx-runtime"), links = () => [
     href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
   }
 ], meta = () => ({
-  charset: "utf-8",
-  title: "Now Playing - The Minimalistic Overlay for Livestreams",
-  viewport: "width=device-width,initial-scale=1",
-  description: "Now Playing is an overlay service for livestreamers that serves up an overlay of the track you are listening to on Spotify.",
-  keywords: "spotify now playing, spotify currently playing, now playing overlay, now playing"
+  charSet: "utf-8",
+  title: "Spotify Now Playing Overlay",
+  viewport: "width=device-width,initial-scale=1"
 });
 function App() {
   return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("html", { lang: "en", children: [
@@ -144,7 +141,7 @@ function App() {
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Meta, {}),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Links, {})
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("body", { className: "min-h-screen w-full antialiased", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("body", { className: "antialiased", children: [
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Outlet, {}),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.ScrollRestoration, {}),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Scripts, {}),
@@ -339,13 +336,12 @@ function Overlay() {
       refetch();
     }, 3e3);
     return () => clearInterval(interval);
-  }, []), !data || !data.is_playing ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", {}) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: data.href, target: "_blank", rel: "noreferrer", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "relative inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 overflow-hidden rounded-lg bg-black/95 py-1.5 px-3", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("figure", { className: "inset-0 z-10 h-full max-h-[64px] w-full max-w-[64px]", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("img", { src: data.image, alt: "" }) }),
+  }, []), !data || !data.is_playing ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { children: "You're not listening currently." }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: data.href, target: "_blank", rel: "noreferrer", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "inline-flex w-full max-w-[285px] flex-row items-center gap-x-4 bg-black pr-3", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("figure", { className: "inline h-16 w-16 shrink-0", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("img", { src: data.image, alt: "" }) }),
     /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "z-10 truncate text-green-500", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_ui.Heading, { as: "h5", size: "h5", children: data.name }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_ui.Heading, { size: "h5", children: data.name }),
       /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "text-sm text-gray-400", children: data.artists.map((artist) => artist).join(", ") })
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "absolute inset-0 z-0 hidden h-full w-full bg-black bg-opacity-50 backdrop-blur-md" })
+    ] })
   ] }) });
 }
 
@@ -354,75 +350,9 @@ var root_exports2 = {};
 __export(root_exports2, {
   default: () => App3
 });
-
-// src/components/shared/ui/Link.tsx
 var import_react6 = require("@remix-run/react"), import_jsx_runtime5 = require("react/jsx-runtime");
-function Link({ to, external, ...props }) {
-  let linkStyle = "font-bold text-green-400 transition-colors hover:text-green-600";
-  return external ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("a", { href: to, className: linkStyle, ...props }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_react6.Link, { to, className: linkStyle, ...props });
-}
-
-// src/components/shared/Footer.tsx
-var import_jsx_runtime6 = require("react/jsx-runtime");
-function Footer() {
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("footer", { className: "bg-black", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "py-6", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "container", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-col items-center gap-y-2", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Copyright, {}),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ContriBute, {})
-  ] }) }) }) });
-}
-var Copyright = () => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
-  "made by",
-  " ",
-  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-    Link,
-    {
-      to: "https://twitter.com/eckoln",
-      target: "_blank",
-      rel: "noreferrer",
-      external: !0,
-      children: "@eckoln"
-    }
-  )
-] }), ContriBute = () => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
-  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/", children: "nowplaying.run" }),
-  " is an open-source initiative.",
-  " ",
-  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-    Link,
-    {
-      to: "https://github.com/eckoln/nowplaying-run",
-      target: "_blank",
-      rel: "noreferrer",
-      external: !0,
-      children: "Contribute!"
-    }
-  )
-] });
-
-// src/components/shared/Header.tsx
-var import_react7 = require("@remix-run/react"), import_bs = require("react-icons/bs"), import_jsx_runtime7 = require("react/jsx-runtime");
-function Header() {
-  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("header", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("nav", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "container", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "flex flex-row items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
-    import_react7.Link,
-    {
-      to: "/",
-      className: "inline-flex items-center justify-center gap-x-2",
-      children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "h-10 w-10", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_bs.BsSoundwave, { className: "h-full w-full" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "hidden text-xl font-semibold tablet:block", children: "Now Playing" })
-      ]
-    }
-  ) }) }) }) });
-}
-
-// src/routes/__root.tsx
-var import_react8 = require("@remix-run/react"), import_jsx_runtime8 = require("react/jsx-runtime");
 function App3() {
-  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "h-full w-full bg-gradient-to-b from-green-600 via-neutral-900 to-black text-white", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Header, {}),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("main", { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_react8.Outlet, {}) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Footer, {})
-  ] });
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("main", { className: "grid min-h-screen w-full place-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_react6.Outlet, {}) });
 }
 
 // src/routes/__root/auth/callback/spotify/index.tsx
@@ -433,14 +363,14 @@ __export(spotify_exports, {
 var import_node4 = require("@remix-run/node"), loader2 = async ({ request }) => {
   let code = new URL(request.url).searchParams.get("code"), accessToken = await spotify.getAccesToken(code), currentUser = await spotify.getCurrentUser(
     accessToken == null ? void 0 : accessToken.access_token
-  ), getUser2 = await prisma.account.findUnique({
+  ), getUser = await prisma.account.findUnique({
     where: { spotifyId: currentUser == null ? void 0 : currentUser.id }
   });
-  if (getUser2)
+  if (getUser)
     return await prisma.account.update({
-      where: { id: getUser2.id },
+      where: { id: getUser.id },
       data: { refreshToken: accessToken == null ? void 0 : accessToken.refresh_token }
-    }), (0, import_node4.redirect)("/?ref=" + getUser2.id);
+    }), (0, import_node4.redirect)("/overlays/" + getUser.id);
   let createAccount = await prisma.account.create({
     data: {
       spotifyId: currentUser == null ? void 0 : currentUser.id,
@@ -448,156 +378,39 @@ var import_node4 = require("@remix-run/node"), loader2 = async ({ request }) => 
       refreshToken: accessToken == null ? void 0 : accessToken.refresh_token
     }
   });
-  return (0, import_node4.redirect)("/?ref=" + createAccount.id);
+  return (0, import_node4.redirect)("/overlays/" + createAccount.id);
 };
 
 // src/routes/__root/index.tsx
 var root_exports3 = {};
 __export(root_exports3, {
   default: () => HomePage,
-  getUser: () => getUser,
   loader: () => loader3
 });
-
-// src/components/shared/ui/Button.tsx
-var import_react9 = require("@remix-run/react"), import_dist = require("@rocinante/ui/dist/"), import_jsx_runtime9 = require("react/jsx-runtime");
-function Button({ to, external, ...props }) {
-  let isLink = typeof to < "u", buttonComponent = /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_dist.Button, { ...props });
-  return isLink && external ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("a", { href: to, children: buttonComponent }) : isLink ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_react9.Link, { to, children: buttonComponent }) : buttonComponent;
+var import_node5 = require("@remix-run/node"), import_react7 = require("@remix-run/react"), import_ui2 = require("@rocinante/ui"), import_bs = require("react-icons/bs"), import_jsx_runtime6 = require("react/jsx-runtime");
+async function loader3() {
+  return (0, import_node5.json)({
+    authorizeUrl: spotify.createAuthorizeUrl()
+  });
 }
-
-// src/components/AuthHeroHomePage.tsx
-var import_ui2 = require("@rocinante/ui"), import_jsx_runtime10 = require("react/jsx-runtime");
-function AuthHeroHomePage({ data }) {
-  let url2 = `${data.origin}/overlays/${data.ref}`;
-  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "flex w-full flex-col items-center space-y-3 rounded-lg bg-green-400/25 p-6", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(import_ui2.Heading, { as: "h3", size: "h3", children: [
-      "Hello ",
-      data.user.displayName,
-      "!"
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
-      Button,
+function HomePage() {
+  let data = (0, import_react7.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-col gap-y-2 text-center", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_ui2.Heading, { size: "h4", children: "Welcome!" }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      import_ui2.Button,
       {
-        variant: "primary",
-        onClick: () => (console.log("clicked to overlay url"), navigator.clipboard.writeText(url2), alert("The URL has been copied!")),
-        children: "Click to Copy"
-      }
-    ),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_ui2.Heading, { children: "OR" }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "select-all", children: url2 }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: "text-sm", children: [
-      "You must now make a few adjustments.",
-      " ",
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(Link, { to: "#how-to-use", children: "Click here" }),
-      " and Follow the directives."
-    ] })
-  ] });
-}
-
-// src/components/GuestHeroHomePage.tsx
-var import_ui3 = require("@rocinante/ui"), import_bs2 = require("react-icons/bs"), import_jsx_runtime11 = require("react/jsx-runtime");
-function GuestHeroHomePage({ authorizeUrl }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_jsx_runtime11.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "relative inline-flex w-full max-w-[285px] flex-row items-center gap-4 rounded-lg bg-black/95 p-3", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("figure", { className: "inline-block h-12 w-12 overflow-hidden rounded-lg", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("img", { src: "/overlay-example-figure.png", alt: "" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "flex flex-col items-start", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_ui3.Heading, { as: "h5", size: "h5", className: "text-green-400", children: "Always Forever" }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "text-sm text-gray-400", children: "Artist" })
-      ] })
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-      Button,
-      {
-        variant: "ghost",
-        to: authorizeUrl,
-        endIcon: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_bs2.BsArrowRight, { className: "h-5 w-5" }),
-        external: !0,
-        children: "Let's create your overlay"
+        as: "a",
+        href: data.authorizeUrl,
+        startIcon: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_bs.BsSpotify, { className: "h-5 w-5" }),
+        children: "Sign in with Spotify"
       }
     )
   ] });
 }
 
-// src/components/HeroHomePage.tsx
-var import_ui4 = require("@rocinante/ui"), import_jsx_runtime12 = require("react/jsx-runtime");
-function HeroHomePage({ data }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("section", { children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "py-8 tablet:py-24", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "mx-auto w-full laptop:max-w-2xl", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "container", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "flex flex-col items-center justify-center space-y-6 text-center", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_ui4.Heading, { as: "h1", size: "h1", children: "The Minimalistic Overlay for Livestreams" }),
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { className: "text-gray-300", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "font-semibold", children: "Now Playing" }),
-      ' is an overlay service for livestreamers that serves up an overlay of the track you are listening to on Spotify and adds it to OBS Studio, XSplit, and similar broadcasting tools as a "browser" source. It is simple to set up and completely free to use.'
-    ] }),
-    data.ref ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(AuthHeroHomePage, { data }) : /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(GuestHeroHomePage, { authorizeUrl: data.authorizeUrl })
-  ] }) }) }) }) });
-}
-
-// src/components/HowToUseHomePage.tsx
-var import_ui5 = require("@rocinante/ui"), import_jsx_runtime13 = require("react/jsx-runtime");
-function HowToUseHomePage() {
-  return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { id: "how-to-use", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "mx-auto w-full py-24 laptop:max-w-2xl", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "container", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "space-y-10", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h1", { className: "text-2xl font-bold leading-snug", children: "How to use?" }),
-    /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(List, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
-        ListItem,
-        {
-          heading: "Step 1: Copy the overlay url",
-          description: "Copy the link we gave you after you signed in."
-        }
-      ),
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
-        ListItem,
-        {
-          heading: "Step 2: Open your broadcasting tool",
-          description: "Open your broadcasting tool and add a new browser source. Paste the overlay link into the URL field."
-        }
-      ),
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
-        ListItem,
-        {
-          heading: "Step 3: Set up the sizes",
-          description: "Width: 285, Height: 76. The dimensions should be set to 285x76."
-        }
-      ),
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
-        ListItem,
-        {
-          heading: "Step 4: And done!",
-          description: "The songs you've been listening to will now appear immediately in the source you've added."
-        }
-      )
-    ] })
-  ] }) }) }) });
-}
-var List = ({ children }) => /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("ul", { className: "space-y-8", children }), ListItem = ({
-  heading,
-  description
-}) => /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
-  /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_ui5.Heading, { as: "h6", children: heading }),
-  /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-gray-400", children: description })
-] }) });
-
-// src/routes/__root/index.tsx
-var import_node5 = require("@remix-run/node"), import_react10 = require("@remix-run/react"), import_jsx_runtime14 = require("react/jsx-runtime"), getUser = async (ref) => await prisma.account.findUnique({ where: { id: ref } });
-async function loader3({ request }) {
-  let url2 = new URL(request.url), ref = url2.searchParams.get("ref"), user = ref ? await getUser(ref) : null;
-  return ref && !user ? (0, import_node5.redirect)("/") : (0, import_node5.json)({
-    user,
-    origin: url2.origin,
-    ref: url2.searchParams.get("ref"),
-    authorizeUrl: spotify.createAuthorizeUrl()
-  });
-}
-function HomePage() {
-  let data = (0, import_react10.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(HeroHomePage, { data }),
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(HowToUseHomePage, {})
-  ] });
-}
-
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "0fa596a7", entry: { module: "/build/entry.client-QTKK27JY.js", imports: ["/build/_shared/chunk-SLPSZVQY.js", "/build/_shared/chunk-G5WX4PPA.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VSSXXUFI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__overlays": { id: "routes/__overlays", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/__overlays-3CHOXZ6K.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__overlays/overlays/$ref": { id: "routes/__overlays/overlays/$ref", parentId: "routes/__overlays", path: "overlays/:ref", index: void 0, caseSensitive: void 0, module: "/build/routes/__overlays/overlays/$ref-YWR3DFYS.js", imports: ["/build/_shared/chunk-U2ADSXYW.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__root": { id: "routes/__root", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/__root-BVGB2YSB.js", imports: ["/build/_shared/chunk-DNZF2PVB.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__root/auth/callback/spotify/index": { id: "routes/__root/auth/callback/spotify/index", parentId: "routes/__root", path: "auth/callback/spotify", index: !0, caseSensitive: void 0, module: "/build/routes/__root/auth/callback/spotify/index-LRRWIURK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__root/index": { id: "routes/__root/index", parentId: "routes/__root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/__root/index-N7MCNJP2.js", imports: ["/build/_shared/chunk-U2ADSXYW.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-0FA596A7.js" };
+var assets_manifest_default = { version: "d2049cd2", entry: { module: "/build/entry.client-7OZ5ICJV.js", imports: ["/build/_shared/chunk-7FUTNX6O.js", "/build/_shared/chunk-Q3IECNXJ.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-66KSBDWZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__overlays": { id: "routes/__overlays", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/__overlays-SXIM2C43.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__overlays/overlays/$ref": { id: "routes/__overlays/overlays/$ref", parentId: "routes/__overlays", path: "overlays/:ref", index: void 0, caseSensitive: void 0, module: "/build/routes/__overlays/overlays/$ref-7IJ67ERN.js", imports: ["/build/_shared/chunk-2OWCVVPS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__root": { id: "routes/__root", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/__root-YOWM4CUS.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__root/auth/callback/spotify/index": { id: "routes/__root/auth/callback/spotify/index", parentId: "routes/__root", path: "auth/callback/spotify", index: !0, caseSensitive: void 0, module: "/build/routes/__root/auth/callback/spotify/index-725XYEXL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/__root/index": { id: "routes/__root/index", parentId: "routes/__root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/__root/index-CEVTWTTR.js", imports: ["/build/_shared/chunk-2OWCVVPS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-D2049CD2.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

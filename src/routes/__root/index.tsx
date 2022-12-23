@@ -1,27 +1,11 @@
-import HeroHomePage from "@/components/HeroHomePage";
-import HowToUseHomePage from "@/components/HowToUseHomePage";
-import { prisma } from "@/utils/prisma.server";
 import { spotify } from "@/utils/spotify.server";
-import { json, redirect, type LoaderArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { Button, Heading } from "@rocinante/ui";
+import { BsSpotify } from "react-icons/bs";
 
-export const getUser = async (ref: string) => {
-  return await prisma.account.findUnique({ where: { id: ref } });
-};
-
-export async function loader({ request }: LoaderArgs) {
-  const url = new URL(request.url);
-  const ref = url.searchParams.get("ref") as string;
-
-  const user = ref ? await getUser(ref) : null;
-  if (ref && !user) {
-    return redirect("/");
-  }
-
+export async function loader() {
   return json({
-    user: user,
-    origin: url.origin,
-    ref: url.searchParams.get("ref"),
     authorizeUrl: spotify.createAuthorizeUrl(),
   });
 }
@@ -30,9 +14,15 @@ export default function HomePage() {
   const data = useLoaderData<typeof loader>();
 
   return (
-    <>
-      <HeroHomePage data={data} />
-      <HowToUseHomePage />
-    </>
+    <div className="flex flex-col gap-y-2 text-center">
+      <Heading size="h4">Welcome!</Heading>
+      <Button
+        as="a"
+        href={data.authorizeUrl}
+        startIcon={<BsSpotify className="h-5 w-5" />}
+      >
+        Sign in with Spotify
+      </Button>
+    </div>
   );
 }

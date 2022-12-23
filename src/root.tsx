@@ -1,3 +1,4 @@
+import styles from "@/styles/app.css";
 import { type LinksFunction, type MetaFunction } from "@remix-run/node";
 import {
   Links,
@@ -7,7 +8,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "@/styles/app.css";
 
 export const links: LinksFunction = () => {
   return [
@@ -26,13 +26,9 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Now Playing - The Minimalistic Overlay for Livestreams",
+  charSet: "utf-8",
+  title: "Spotify Now Playing Overlay",
   viewport: "width=device-width,initial-scale=1",
-  description:
-    "Now Playing is an overlay service for livestreamers that serves up an overlay of the track you are listening to on Spotify.",
-  keywords:
-    "spotify now playing, spotify currently playing, now playing overlay, now playing",
 });
 
 export default function App() {
@@ -42,7 +38,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen w-full antialiased">
+      <body className="antialiased">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

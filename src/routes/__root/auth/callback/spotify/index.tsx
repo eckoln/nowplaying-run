@@ -21,7 +21,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       where: { id: getUser.id },
       data: { refreshToken: accessToken?.refresh_token },
     });
-    return redirect("/?ref=" + getUser.id);
+    return redirect("/overlays/" + getUser.id);
   }
 
   // create new account if not exist user
@@ -34,5 +34,5 @@ export const loader: LoaderFunction = async ({ request }) => {
   });
 
   // response
-  return redirect("/?ref=" + createAccount.id);
+  return redirect("/overlays/" + createAccount.id);
 };
