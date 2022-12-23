@@ -1,7 +1,6 @@
-//import Button from "src/components/shared/ui/Button";
+import Button from "@/ui/Button";
 import { Heading } from "@rocinante/ui";
 import { BsArrowRight } from "react-icons/bs";
-import Button from "src/components/shared/ui/Button";
 
 type Props = {
   authorizeUrl: string;

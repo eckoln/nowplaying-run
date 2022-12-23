@@ -1,4 +1,4 @@
-import Link from "src/components/shared/ui/Link";
+import Link from "@/components/shared/ui/Link";
 
 export default function Footer() {
   return (

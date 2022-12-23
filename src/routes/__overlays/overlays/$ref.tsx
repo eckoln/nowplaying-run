@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { prisma } from "@/utils/prisma.server";
 import {
   commitSession,
   destroySession,
   getSession,
 } from "@/utils/session.server";
+import { spotify } from "@/utils/spotify.server";
 import { json, redirect, type LoaderArgs } from "@remix-run/node";
 import { useFetcher, useParams } from "@remix-run/react";
 import { Heading } from "@rocinante/ui";
 import { useEffect } from "react";
-import { prisma } from "src/utils/prisma.server";
-import { spotify } from "src/utils/spotify.server";
 import type { SpotifyCurrentlyPlaying } from "types";
 
 export async function loader({ request, params }: LoaderArgs) {

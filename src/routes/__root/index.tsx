@@ -1,9 +1,9 @@
+import HeroHomePage from "@/components/HeroHomePage";
+import HowToUseHomePage from "@/components/HowToUseHomePage";
 import { prisma } from "@/utils/prisma.server";
+import { spotify } from "@/utils/spotify.server";
 import { json, redirect, type LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import HeroHomePage from "src/components/HeroHomePage";
-import HowToUseHomePage from "src/components/HowToUseHomePage";
-import { spotify } from "src/utils/spotify.server";
 
 export const getUser = async (ref: string) => {
   return await prisma.account.findUnique({ where: { id: ref } });

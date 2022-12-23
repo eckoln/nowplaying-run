@@ -1,10 +1,10 @@
+import { env } from "@/utils/env.server";
 import type {
   SpotifyAccessTokenResponse,
   SpotifyCurrentlyPlayingResponse,
   SpotifyCurrentUserResponse,
   SpotifyRefreshTokenResponse,
 } from "types";
-import { env } from "./env.server";
 
 type Props = {
   authDomain: string;
@@ -28,8 +28,8 @@ class Spotify {
       client_id: clientId,
       response_type: "code",
       redirect_uri: clientRedirectUri,
-      scope: "user-read-email user-read-currently-playing",
-      //show_dialog: "true",
+      scope: "user-read-currently-playing",
+      show_dialog: "true",
     };
     const authorizeUrl = uri + "?" + new URLSearchParams(params).toString();
     return authorizeUrl;

@@ -13,7 +13,7 @@ datasource db {
 model Account {
   id String @id @default(cuid())
 
-  email        String @unique
+  spotifyId    String @unique
   displayName  String
   refreshToken String
 
